@@ -49,8 +49,8 @@ jobs:
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 0
         
         if (-not (Get-LocalUser -Name "aeuser" -ErrorAction SilentlyContinue)) {
-            $Password = ConvertTo-SecureString "tosbik2026" -AsPlainText -Force
-            New-LocalUser -Name "saribas" -Password $Password
+            $Password = ConvertTo-SecureString "AERunner2026" -AsPlainText -Force
+            New-LocalUser -Name "aeuser" -Password $Password
             Add-LocalGroupMember -Group "Administrators" -Member "aeuser"
             Add-LocalGroupMember -Group "Remote Desktop Users" -Member "aeuser"
         }
@@ -62,8 +62,8 @@ jobs:
         echo "🚀 SUNUCU SENİN LİNKİNLE SORUNSUZ HAZIRLANDI!"
         echo "🔗 TAILSCALE IP ADRESİNİZ: $ip"
         echo "===================================================="
-        echo "Kullanıcı Adı: saribas"
-        echo "Şifre: tosbik2026"
+        echo "Kullanıcı Adı: aeuser"
+        echo "Şifre: AERunner2026"
         echo "===================================================="
         
         $timeout = New-TimeSpan -Hours 5 -Minutes 50
